@@ -1,0 +1,192 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"React Functional Component": {
+		"scope": "javascript,typescript,react",
+		"prefix": "r_fc",
+		"body": [
+			"import React from 'react';",
+			"",
+			"function ${TM_FILENAME/(.*)\\..+$/$1/}(props){",
+			"\treturn (",
+			"\t\t<${3:React.Fragment} className='$4'>",
+			"\t\t\t$0",
+			"\t\t</${3:React.Fragment}>",
+			"\t);",
+			"}",
+			"",
+			"export default ${TM_FILENAME/(.*)\\..+$/$1/};"
+		],
+		"description": ""
+	},
+
+	"React Functional Component with css file": {
+		"scope": "javascript,typescript,react",
+		"prefix": "r_fc:css",
+		"body": [
+			"import React from 'react';",
+			"",
+			"import './${TM_FILENAME/(.*)\\..+$/$1/}.css';",
+			"",
+			"function ${TM_FILENAME/(.*)\\..+$/$1/}(props){",
+			"\treturn (",
+			"\t\t<${3:React.Fragment} className='$4'>",
+			"\t\t\t$0",
+			"\t\t</${3:React.Fragment}>",
+			"\t);",
+			"}",
+			"",
+			"export default ${TM_FILENAME/(.*)\\..+$/$1/};"
+		],
+		"description": ""
+	},
+
+	"React Class Component": {
+		"scope": "javascript,typescript,react",
+		"prefix": "r_cc",
+		"body": [
+			"import React from 'react';",
+			"",
+			"class ${TM_FILENAME/(.*)\\..+$/$1/} extends React.Component {",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<${3:React.Fragment} className='$4'>",
+			"\t\t\t\t$0",
+			"\t\t\t</${3:React.Fragment}>",
+			"\t\t);",
+			"\t}",
+			"}",
+			"",
+			"export default ${TM_FILENAME/(.*)\\..+$/$1/};",
+			""
+		]
+	},
+	"React Class Component with Props": {
+		"scope": "javascript,typescript,react",
+		"prefix": "r_cc:pr",
+		"body": [
+			"import React from 'react';",
+			"",
+			"class ${TM_FILENAME/(.*)\\..+$/$1/} extends React.Component {",
+			"",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<${3:React.Fragment} className='$4'>",
+			"\t\t\t\t$0",
+			"\t\t\t</${3:React.Fragment}>",
+			"\t\t);",
+			"\t}",
+			"}",
+			"",
+			"export default ${TM_FILENAME/(.*)\\..+$/$1/};",
+			""
+		]
+	},
+	"React Class Component with State": {
+		"scope": "javascript,typescript,react",
+		"prefix": "r_cc:st",
+		"body": [
+			"import React from 'react';",
+			"",
+			"class ${TM_FILENAME/(.*)\\..+$/$1/} extends React.Component {",
+			"\tstate = {$2};",
+			"",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<${3:React.Fragment} className='$4'>",
+			"\t\t\t\t$0",
+			"\t\t\t</${3:React.Fragment}>",
+			"\t\t);",
+			"\t}",
+			"}",
+			"",
+			"export default ${TM_FILENAME/(.*)\\..+$/$1/};",
+			""
+		]
+	},
+	"React Class Component with Props and State": {
+		"scope": "javascript,typescript,react",
+		"prefix": "r_cc:pr,st",
+		"body": [
+			"import React from 'react';",
+			"",
+			"class ${TM_FILENAME/(.*)\\..+$/$1/} extends React.Component {",
+			"\tstate = {$2};",
+			"",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<${3:React.Fragment} className='$4'>",
+			"\t\t\t\t$0",
+			"\t\t\t</${3:React.Fragment}>",
+			"\t\t);",
+			"\t}",
+			"}",
+			"",
+			"export default ${TM_FILENAME/(.*)\\..+$/$1/};",
+			""
+		]
+	},
+	"React Class Component with Props, State and CSS import": {
+		"scope": "javascript,typescript,react",
+		"prefix": "r_cc:pr,st,css",
+		"body": [
+			"import React from 'react';",
+			"import './${TM_FILENAME/(.*)\\..+$/$1/}.css'",
+			"",
+			"class ${TM_FILENAME/(.*)\\..+$/$1/} extends React.Component {",
+			"\tstate = {$2};",
+			"",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<${3:React.Fragment} className='$4'>",
+			"\t\t\t\t$0",
+			"\t\t\t</${3:React.Fragment}>",
+			"\t\t);",
+			"\t}",
+			"}",
+			"",
+			"export default ${TM_FILENAME/(.*)\\..+$/$1/};",
+			""
+		]
+	},
+
+	"Import css for this file": {
+		"scope": "javascript,typescript,react",
+		"prefix": "r_css",
+		"body": ["import './${TM_FILENAME/(.*)\\..+$/$1/}.css'", "$0"]
+	},
+
+	"React comment": {
+		"scope": "javascript,typescript,react",
+		"prefix": "r_com",
+		"body": ["{/* $0 */}"],
+		"description": ""
+	},
+
+	"React Router Route": {
+		"scope": "javascript,typescript,react",
+		"prefix": "route",
+		"body": ["<Route path='/${1:path}' element={<${0:Component }/>} />"],
+		"description": ""
+	},
+
+	"Page not found router route": {
+		"scope": "javascript, typescript, react",
+		"prefix": "route:404",
+		"body": ["<Route path='*' element={${2:<h1>404! Page not found</h1>}} />"]
+	}
+}
